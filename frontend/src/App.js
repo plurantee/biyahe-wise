@@ -20,6 +20,7 @@ function App() {
   };
 
   const handleSubmit = async () => {
+    setShowResult(false);
     setLoading(true);
     try {
       const res = await axios.post("http://localhost:8080/api/estimate", form);
@@ -94,7 +95,7 @@ function App() {
               <button
                 onClick={handleSubmit}
                 disabled={loading}
-                className="bg-blue-600 text-white py-3 rounded-lg text-lg font-semibold hover:bg-blue-700 transition"
+                className={`bg-blue-600 text-white py-3 rounded-lg text-lg font-semibold transition ${loading ? "opacity-50 cursor-not-allowed" : "hover:bg-blue-700"}`}
               >
                 {loading ? "Calculating..." : "Estimate Trip"}
               </button>
@@ -103,16 +104,25 @@ function App() {
         </div>
       </div>
 
-      <div className={`absolute top-0 right-0 h-full bg-white shadow-xl w-96 p-8 transition-transform duration-500 ease-in-out ${showResult ? "translate-x-0" : "translate-x-full"}`}>
+      <div
+        className={`absolute top-0 right-0 h-full bg-white shadow-xl w-96 p-8 transition-transform duration-500 ease-in-out ${showResult ? "translate-x-0" : "translate-x-full"}`}
+        style={{ overflowY: "auto", maxHeight: "100vh" }}
+      >
         {result && (
           <>
             <h3 className="text-2xl font-bold mb-4 text-blue-600">Results:</h3>
 
             {form.mode === "DRIVE" && (
               <>
-                <p className="text-lg mb-2">Estimated Time: {result.options[0].estimatedTimeMinutes} minutes</p>
-                <p className="text-lg mb-2">Estimated Cost: ₱{result.options[0].estimatedCostPHP}</p>
-                <p className="text-lg">Estimated Fuel Used: {result.estimatedLitersUsed} liters</p>
+                <p className="text-lg mb-2">
+                  Estimated Time: {result.options[0].estimatedTimeMinutes} minutes
+                </p>
+                <p className="text-lg mb-2">
+                  Estimated Cost: ₱{result.options[0].estimatedCostPHP}
+                </p>
+                <p className="text-lg">
+                  Estimated Fuel Used: {result.estimatedLitersUsed} liters
+                </p>
               </>
             )}
 

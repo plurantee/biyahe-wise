@@ -35,7 +35,7 @@ public class EstimationService {
                     The user is driving from: %s to: %s at: %s.
                     Car: %s
 
-                    Estimate total driving distance, fuel consumption, traffic time, and cost based on average Metro Manila fuel prices.
+                    Estimate total driving distance, fuel consumption, traffic time, and cost .
                     Return only valid JSON in this format:
 
                     {
@@ -81,7 +81,6 @@ public class EstimationService {
 
                     The user is commuting from: %s to: %s at: %s.
 
-                    If locations are not globally specific, assume Metro Manila, Philippines.
                     Provide multiple commute options as valid JSON in this format:
 
                     {
