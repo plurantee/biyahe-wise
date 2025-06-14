@@ -38,9 +38,7 @@ BiyaheWise dynamically generates AI-powered multi-modal route options.
 
 ---
 
-```markdown
-![Sample Screenshot](![img.png](img.png))
-```
+![Sample Screenshot](img.png)
 
 ## 💡 Sample Usage 2
 
@@ -52,5 +50,4 @@ BiyaheWise dynamically generates AI-powered multi-modal route options.
 
 ---
 
-```markdown
-![Sample Screenshot](![![img_1.png](img_1.png)img.png](img.png![img_1.png](img_1.png)))
+![Sample Screenshot](img_1.png)
